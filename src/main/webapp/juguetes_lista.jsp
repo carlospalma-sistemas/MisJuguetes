@@ -36,12 +36,13 @@
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
+                    <%
+                        ColeccionJuguetes coleccion = new ColeccionJuguetes();
+                        boolean hayDatos = coleccion.cargarJuguetes();
+                    %>
                     <tbody>
-                        <%
-                            ColeccionJuguetes coleccion = new ColeccionJuguetes();
-                            boolean hayDatos = coleccion.cargarJuguetes();
-                            if (hayDatos == true)  { 
-                                for (Juguete j : coleccion.getLista()) { %>
+                        <% if (hayDatos) { %>
+                        <%  for (Juguete j : coleccion.getLista()) { %>
                         <tr>
                             <td scope="row"><%= j.getId() %></td>
                             <td><%= j.getNombre() %></td>
@@ -52,12 +53,10 @@
                                 <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
-                        <%
-                                }  
-                            } else { 
-                        %>
+                        <% } %>
+                        <% } else { %>
                         <tr>
-                            <td colspan=5>No hay datos</td>
+                            <td colspan="5">No hay datos</td>
                         </tr>
                         <% } %>
                     </tbody>
