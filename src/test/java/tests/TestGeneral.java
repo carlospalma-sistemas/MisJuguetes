@@ -24,7 +24,7 @@ public class TestGeneral {
         Assert.assertFalse(con.isConectado(), "No se cerró conexión. ");
     }
     
-    
+    @Test
     public void verificarCargaJuguetes() {
         JugueteDAO dao = new JugueteDAO();
         Assert.assertTrue(dao.consultarJuguetes().size() > 0, "No se cargaron datos. ");
