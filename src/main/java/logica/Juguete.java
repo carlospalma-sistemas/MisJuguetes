@@ -7,9 +7,9 @@ package logica;
 public class Juguete {
     private int id;
     private String nombre;
-    private String tipo;
+    private int idTipo;
     private String fechaCompra;  //yyyy-mm-dd
-    private String estado;
+    private int idEstado;
     private String disponibilidad;
 
     
@@ -17,21 +17,21 @@ public class Juguete {
     }
 
     
-    public Juguete(String nombre, String tipo, String fecha, String estado, String disponibilidad) {
+    public Juguete(String nombre, int idTipo, String fecha, int idEstado, String disponibilidad) {
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.idTipo = idTipo;
         this.fechaCompra = fecha;
-        this.estado = estado;
+        this.idEstado = idEstado;
         this.disponibilidad = disponibilidad;
     }
     
     
-    public Juguete(int id, String nombre, String tipo, String fecha, String estado, String disponibilidad) {
+    public Juguete(int id, String nombre, int idTipo, String fecha, int idEstado, String disponibilidad) {
         this.id = id;
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.idTipo = idTipo;
         this.fechaCompra = fecha;
-        this.estado = estado;
+        this.idEstado = idEstado;
         this.disponibilidad = disponibilidad;
     }
     
@@ -56,16 +56,6 @@ public class Juguete {
     }
 
     
-    public String getTipo() {
-        return tipo;
-    }
-
-    
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    
-    
     public String getFechaCompra() {
         return fechaCompra;
     }
@@ -76,16 +66,6 @@ public class Juguete {
     }
     
     
-    public String getEstado() {
-        return estado;
-    }
-
-    
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    
     public String getDisponibilidad() {
         return disponibilidad;
     }
@@ -93,5 +73,21 @@ public class Juguete {
     
     public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
+    }
+
+    public int getIdTipo() {
+        return idTipo;
+    }
+
+    public void setIdTipo(int idTipo) {
+        this.idTipo = idTipo;
+    }
+
+    public int getIdEstado() {
+        return idEstado;
+    }
+
+    public void setIdEstado(int idEstado) {
+        this.idEstado = idEstado;
     }
 }

@@ -1,3 +1,6 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.TreeMap"%>
+<%@page import="logica.ColeccionJuguetes"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,12 +23,15 @@
                 </div>
 		<div class="row mb-3">
                     <label for="selTipo" class="col-form-label col-sm-2">Tipo</label>
+                    <% 
+                        ColeccionJuguetes coleccion = new ColeccionJuguetes(); 
+                        TreeMap<Integer, String> tipos = coleccion.getTiposJuguetes();
+                    %>
                     <select class="col-form-control col-sm-10" id="selTipo" name="selTipo">
 		        <option selected value=""></option>
-                        <option value="Videojuego">Videojuego</option>
-		        <option value="Electrónico">Electrónico</option>
-		        <option value="Peluche">Peluche</option>
-                        <option value="Otro">Otro</option>
+                        <% for (Map.Entry<Integer, String> entrada : tipos.entrySet() ) { %>
+                        <option value="<%= entrada.getKey() %>"><%= entrada.getValue() %></option>
+		        <% } %>
 		    </select>
                 </div>
                 <div class="row mb-3">
@@ -34,11 +40,14 @@
                 </div>
 		<div class="row mb-3">
                     <label for="selEstado" class="col-form-label col-sm-2">Estado</label>
+                    <% 
+                        TreeMap<Integer, String> estados = coleccion.getEstadosJuguetes();
+                    %>
                     <select class="col-form-control col-sm-10" id="selEstado" name="selEstado">
 		        <option selected value=""></option>
-		        <option value="Bueno">Bueno</option>
-		        <option value="Modificado">Modificado</option>
-		        <option value="Dañado">Dañado</option>
+                        <% for (Map.Entry<Integer, String> entrada : estados.entrySet() ) { %>
+                        <option value="<%= entrada.getKey() %>"><%= entrada.getValue() %></option>
+		        <% } %>
 		    </select>
                 </div>
 		<div class="row mb-3">

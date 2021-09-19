@@ -15,14 +15,14 @@
         <%
             String id = request.getParameter("txtId");
             String nombre = request.getParameter("txtNombre");
-            String tipo = request.getParameter("selTipo");
+            int idTipo = Integer.parseInt(request.getParameter("selTipo"));
             String fechaCompra = request.getParameter("dtpFechaCompra");
-            String estado = request.getParameter("selEstado");
+            int idEstado = Integer.parseInt(request.getParameter("selEstado"));
             String disponibilidad = request.getParameter("radDisponibilidad");
             String accion = request.getParameter("btnSubmit");
 
             if (accion.equals("nuevo")) {
-                Juguete j = new Juguete(nombre, tipo, fechaCompra, estado, disponibilidad);
+                Juguete j = new Juguete(nombre, idTipo, fechaCompra, idEstado, disponibilidad);
                 ColeccionJuguetes coleccion = new ColeccionJuguetes();
                 boolean guardado = coleccion.guardarJuguete(j);
                 if (guardado == true) {

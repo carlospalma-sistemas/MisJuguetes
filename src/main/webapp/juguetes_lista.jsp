@@ -50,8 +50,8 @@
                         <tr>
                             <td scope="row"><%= j.getId()%></td>
                             <td><%= j.getNombre()%></td>
-                            <td><%= j.getTipo()%></td>
-                            <td><%= j.getEstado()%></td>
+                            <td><%= coleccion.getTipoJuguete(j.getIdTipo()) %></td>
+                            <td><%= coleccion.getEstadoJuguete(j.getIdEstado()) %></td>
                             <td>
                                 <button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>

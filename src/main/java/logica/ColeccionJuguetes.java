@@ -6,6 +6,7 @@
 package logica;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 import persistencia.JugueteDAO;
 
 /**
@@ -21,6 +22,42 @@ public class ColeccionJuguetes {
      */
     public ArrayList<Juguete> getLista() {
         return lista;
+    }
+    
+    /**
+     * Obtiene el nombre del tipo de juguete dado el id correspondiente
+     * @param key el id del tipo
+     * @return el nombre del tipo de juguete
+     */
+    public String getTipoJuguete(int key) {
+        JugueteDAO dao = new JugueteDAO();
+        TreeMap<Integer, String> listaTiposJuguetes = dao.cargarTiposJuguetes();
+        String value = listaTiposJuguetes.get(key);
+        return value;
+    }
+    
+    public TreeMap<Integer, String> getTiposJuguetes() {
+        JugueteDAO dao = new JugueteDAO();
+        TreeMap<Integer, String> listaTiposJuguetes = dao.cargarTiposJuguetes();
+        return listaTiposJuguetes;
+    }
+    
+    /**
+     * Obtiene el nombre del estado de juguete dado el id correspondiente
+     * @param key el id del estado
+     * @return el nombre del estado de juguete
+     */
+    public String getEstadoJuguete(int key) {
+        JugueteDAO dao = new JugueteDAO();
+        TreeMap<Integer, String> listaEstadosJuguetes = dao.cargarEstadosJuguetes();
+        String value = listaEstadosJuguetes.get(key);
+        return value;
+    }
+    
+    public TreeMap<Integer, String> getEstadosJuguetes() {
+        JugueteDAO dao = new JugueteDAO();
+        TreeMap<Integer, String> listaEstadosJuguetes = dao.cargarEstadosJuguetes();
+        return listaEstadosJuguetes;
     }
     
     /**
