@@ -13,23 +13,26 @@
     </head>
     <body>
         <%
-            String id = request.getParameter("txtId");
+            int id = Integer.parseInt(request.getParameter("txtId"));
             String nombre = request.getParameter("txtNombre");
             int idTipo = Integer.parseInt(request.getParameter("selTipo"));
             String fechaCompra = request.getParameter("dtpFechaCompra");
             int idEstado = Integer.parseInt(request.getParameter("selEstado"));
             String disponibilidad = request.getParameter("radDisponibilidad");
             String accion = request.getParameter("btnSubmit");
-
+            Juguete j = null;
             if (accion.equals("nuevo")) {
-                Juguete j = new Juguete(nombre, idTipo, fechaCompra, idEstado, disponibilidad);
-                ColeccionJuguetes coleccion = new ColeccionJuguetes();
-                boolean guardado = coleccion.guardarJuguete(j);
-                if (guardado == true) {
-                    out.println("Juguete guardado exitosamente");
-                } else {
-                    out.println("Información de juguete no se guardó.");
-                }
+                j = new Juguete(nombre, idTipo, fechaCompra, idEstado, disponibilidad);
+            }
+            else if (accion.equals("editar")){
+                j = new Juguete(id, nombre, idTipo, fechaCompra, idEstado, disponibilidad);
+            }
+            ColeccionJuguetes coleccion = new ColeccionJuguetes();
+            boolean guardado = coleccion.guardarJuguete(j);
+            if (guardado == true) {
+                out.println("Juguete guardado exitosamente");
+            } else {
+                out.println("Información de juguete no se guardó.");
             }
         %>
         <a href="juguetes_lista.jsp"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver a la lista</button></a>

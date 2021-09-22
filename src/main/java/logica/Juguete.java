@@ -5,7 +5,7 @@ package logica;
  * @author Cielo Juliana
  */
 public class Juguete {
-    private int id;
+    private int id = 0;
     private String nombre;
     private int idTipo;
     private String fechaCompra;  //yyyy-mm-dd

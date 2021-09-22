@@ -1,18 +1,18 @@
 --CREACIÓN DE LA BASE DE DATOS
 ------------------------------
 
-CREATE DATABASE `dbmisjuguetes` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `dbmisjuguetes`
 
 
 
 --CREACIÓN DE LA TABLA ESTADOS_JUGUETES Y ADICIÓN DE DATOS
 ----------------------------------------------------------
 
-CREATE TABLE `estados_juguetes` (
+CREATE TABLE `dbmisjuguetes`.`estados_juguetes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `estado` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO estados_juguetes (estado) VALUES ('Bueno');
 INSERT INTO estados_juguetes (estado) VALUES ('Modificado');
@@ -27,7 +27,7 @@ CREATE TABLE `tipos_juguetes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `tipo` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO tipos_juguetes VALUES ('Videojuego');
 INSERT INTO tipos_juguetes VALUES ('Electrónico');
@@ -51,6 +51,6 @@ CREATE TABLE `juguetes` (
   KEY `fk_estados_idx` (`estadojuguete_id`),
   CONSTRAINT `fk_estados` FOREIGN KEY (`estadojuguete_id`) REFERENCES `estados_juguetes` (`id`),
   CONSTRAINT `fk_tipos` FOREIGN KEY (`tipojuguete_id`) REFERENCES `tipos_juguetes` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='			';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO juguetes (nombre, tipojuguete_id, fechacompra, estadojuguete_id disponibilidad) VALUES ('Juguete de prueba', 1, '2018-01-01', 1, 'Disponible');

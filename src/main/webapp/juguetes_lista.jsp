@@ -27,7 +27,7 @@
                         <button type="button" class="btn btn-light col-sm-1"><i class="bi bi-search"></i></button>                    
                     </div>
                 </form>
-                <a href="juguetes_form.jsp" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo juguete</button></a>
+                <a href="juguetes_form.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo juguete</button></a>
             </div>
             <form>
                 <table class="table">
@@ -37,6 +37,7 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Estado</th>
+                            <th scope="col">Disponibilidad</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -52,8 +53,9 @@
                             <td><%= j.getNombre()%></td>
                             <td><%= coleccion.getTipoJuguete(j.getIdTipo()) %></td>
                             <td><%= coleccion.getEstadoJuguete(j.getIdEstado()) %></td>
+                            <td><%= j.getDisponibilidad() %></td>
                             <td>
-                                <button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button>
+                                <a href="juguetes_form.jsp?accion=editar&id=<%= j.getId() %>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
                                 <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>

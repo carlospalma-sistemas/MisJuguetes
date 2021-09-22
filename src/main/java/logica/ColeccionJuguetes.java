@@ -36,6 +36,10 @@ public class ColeccionJuguetes {
         return value;
     }
     
+    /**
+     * Obtiene la lista de los tipos de juguetes
+     * @return un treemap con los tipos de juguetes
+     */
     public TreeMap<Integer, String> getTiposJuguetes() {
         JugueteDAO dao = new JugueteDAO();
         TreeMap<Integer, String> listaTiposJuguetes = dao.cargarTiposJuguetes();
@@ -54,6 +58,10 @@ public class ColeccionJuguetes {
         return value;
     }
     
+    /**
+     * Obtiene la lista de los estados de juguetes
+     * @return un treemap con los estados de juguetes
+     */
     public TreeMap<Integer, String> getEstadosJuguetes() {
         JugueteDAO dao = new JugueteDAO();
         TreeMap<Integer, String> listaEstadosJuguetes = dao.cargarEstadosJuguetes();
@@ -76,18 +84,54 @@ public class ColeccionJuguetes {
     }
     
     /**
-     * Guarda la información de un juguete capturada desde el formulario
-     * @param j un objeto con los datos de un juguete específico
-     * @return true si guarda el juguete en la base de datos, o false si no lo guarda
+     * Carga la información de ciertos juguetes de la base de datos mediante filtro
+     * @return true si carga los juguetes, o false si no se logró cargar
      */
-    public boolean guardarJuguete(Juguete j) {
+    public boolean cargarJuguetesPorFiltro(String filtro) {
         JugueteDAO dao = new JugueteDAO();
-        int id = dao.guardarNuevoJuguete(j);
-        if (id > 0) {
+        lista = dao.consultarJuguetesPorFiltro(filtro);
+        if (lista.size() > 0) {
             return true;
         }
         else {
             return false;
         }
     }
+    
+    /**
+     * Carga la información de un solo juguete de la base de datos
+     * @return true si carga los juguetes, o false si no se logró cargar
+     */
+    public Juguete cargarUnJuguete(int id) {
+        JugueteDAO dao = new JugueteDAO();
+        Juguete j = dao.consultarJuguete(id);
+        return j;
+    }
+    
+    /**
+     * Guarda la información de un juguete capturada desde el formulario
+     * @param j un objeto con los datos de un juguete específico
+     * @return true si guarda el juguete en la base de datos, o false si no lo guarda
+     */
+    public boolean guardarJuguete(Juguete j) {
+        JugueteDAO dao = new JugueteDAO();
+        if (j.getId() == 0) {
+            int id = dao.guardarNuevoJuguete(j);
+            if (id > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else {
+            int filas = dao.guardarJugueteExistente(j);
+            if (filas == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+    
+    
 }
