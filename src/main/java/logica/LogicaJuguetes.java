@@ -13,7 +13,7 @@ import persistencia.JugueteDAO;
  * Contiene la lógica requerida para gestionar la información de los juguetes
  * @author Cielo Juliana
  */
-public class ColeccionJuguetes {
+public class LogicaJuguetes {
     private ArrayList<Juguete> lista;
     
     /**

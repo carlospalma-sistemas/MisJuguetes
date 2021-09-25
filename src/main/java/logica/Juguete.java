@@ -27,12 +27,8 @@ public class Juguete {
     
     
     public Juguete(int id, String nombre, int idTipo, String fecha, int idEstado, String disponibilidad) {
+        this(nombre, idTipo, fecha, idEstado, disponibilidad);
         this.id = id;
-        this.nombre = nombre;
-        this.idTipo = idTipo;
-        this.fechaCompra = fecha;
-        this.idEstado = idEstado;
-        this.disponibilidad = disponibilidad;
     }
     
     

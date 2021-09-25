@@ -3,7 +3,7 @@
     Created on : 14/09/2021, 7:13:43 a. m.
     Author     : Cielo Juliana
 --%>
-<%@page import="logica.ColeccionJuguetes"%>
+<%@page import="logica.LogicaJuguetes"%>
 <%@page import="logica.Juguete"%>
 
 <html>
@@ -27,8 +27,8 @@
             else if (accion.equals("editar")){
                 j = new Juguete(id, nombre, idTipo, fechaCompra, idEstado, disponibilidad);
             }
-            ColeccionJuguetes coleccion = new ColeccionJuguetes();
-            boolean guardado = coleccion.guardarJuguete(j);
+            LogicaJuguetes logicaJuguetes = new LogicaJuguetes();
+            boolean guardado = logicaJuguetes.guardarJuguete(j);
             if (guardado == true) {
                 out.println("Juguete guardado exitosamente");
             } else {

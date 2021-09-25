@@ -53,7 +53,7 @@ public class JugueteDAO {
         ConexionBD con = new ConexionBD();
         String sql = "SELECT id, nombre, tipojuguete_id, fechacompra, estadojuguete_id, disponibilidad " +
                      "FROM juguetes "+
-                     "WHERE id = "+idAConsultar + " ";
+                     "WHERE id = " + idAConsultar + " ";
         ResultSet rs = con.ejecutarQuery(sql);
         try {
             if (rs.next()) {

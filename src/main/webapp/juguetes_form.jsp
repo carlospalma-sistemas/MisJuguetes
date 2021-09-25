@@ -1,7 +1,7 @@
+<%@page import="logica.LogicaJuguetes"%>
 <%@page import="logica.Juguete"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.TreeMap"%>
-<%@page import="logica.ColeccionJuguetes"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,8 +24,8 @@
                 
                 if (accion.equals("editar")) {
                     id = Integer.parseInt(request.getParameter("id"));
-                    ColeccionJuguetes coleccion = new ColeccionJuguetes();
-                    Juguete j = coleccion.cargarUnJuguete(id);
+                    LogicaJuguetes logicaJuguetes = new LogicaJuguetes();
+                    Juguete j = logicaJuguetes.cargarUnJuguete(id);
                     nombre = j.getNombre();
                     idTipo = j.getIdTipo();
                     fechaCompra = j.getFechaCompra();
@@ -48,8 +48,8 @@
 		<div class="row mb-3">
                     <label for="selTipo" class="col-form-label col-sm-2">Tipo</label>
                     <% 
-                        ColeccionJuguetes coleccion = new ColeccionJuguetes(); 
-                        TreeMap<Integer, String> tipos = coleccion.getTiposJuguetes();
+                        LogicaJuguetes logicaJuguetes = new LogicaJuguetes(); 
+                        TreeMap<Integer, String> tipos = logicaJuguetes.getTiposJuguetes();
                     %>
                     <select class="col-form-control col-sm-10" id="selTipo" name="selTipo">
 		        <option selected value=""></option>
@@ -65,7 +65,7 @@
 		<div class="row mb-3">
                     <label for="selEstado" class="col-form-label col-sm-2">Estado</label>
                     <% 
-                        TreeMap<Integer, String> estados = coleccion.getEstadosJuguetes();
+                        TreeMap<Integer, String> estados = logicaJuguetes.getEstadosJuguetes();
                     %>
                     <select class="col-form-control col-sm-10" id="selEstado" name="selEstado">
 		        <option selected value=""></option>
