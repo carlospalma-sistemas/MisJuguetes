@@ -1,0 +1,14 @@
+CREATE TABLE `dbmisjuguetes`.`usuarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombrecompleto` VARCHAR(100) NOT NULL,
+  `usuario` VARCHAR(20) NOT NULL,
+  `passw` VARCHAR(20) NOT NULL,
+  `fechanacimiento` DATE NULL,
+  `parentesco` VARCHAR(30) NULL,
+  `rol` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+INSERT INTO usuarios (nombrecompleto, usuario, passw, fechanacimiento, parentesco, rol)
+VALUES ('Administrador del Sistema', 'admin', 'admin', '1977-08-17', 'Padre', 'Administrador');
+
