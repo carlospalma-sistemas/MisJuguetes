@@ -43,7 +43,7 @@
                 </div>
                 <div class="row mb-3">
                     <label for="txtNombre" class="col-form-label col-sm-2">Nombre</label>
-                    <input type="text" class="col-form-control col-sm-10" id="txtNombre" name="txtNombre" value="<%= nombre %>">
+                    <input type="text" class="col-form-control col-sm-10" id="txtNombre" name="txtNombre" value="<%= nombre %>" required>
                 </div>
 		<div class="row mb-3">
                     <label for="selTipo" class="col-form-label col-sm-2">Tipo</label>
@@ -51,7 +51,7 @@
                         LogicaJuguetes logicaJuguetes = new LogicaJuguetes(); 
                         TreeMap<Integer, String> tipos = logicaJuguetes.getTiposJuguetes();
                     %>
-                    <select class="col-form-control col-sm-10" id="selTipo" name="selTipo">
+                    <select class="col-form-control col-sm-10" id="selTipo" name="selTipo" required>
 		        <option selected value=""></option>
                         <% for (Map.Entry<Integer, String> entrada : tipos.entrySet() ) { %>
                         <option <%= entrada.getKey()== idTipo ? "selected" : "" %> value="<%= entrada.getKey() %>"><%= entrada.getValue() %></option>
@@ -67,7 +67,7 @@
                     <% 
                         TreeMap<Integer, String> estados = logicaJuguetes.getEstadosJuguetes();
                     %>
-                    <select class="col-form-control col-sm-10" id="selEstado" name="selEstado">
+                    <select class="col-form-control col-sm-10" id="selEstado" name="selEstado" required>
 		        <option selected value=""></option>
                         <% for (Map.Entry<Integer, String> entrada : estados.entrySet() ) { %>
                         <option <%= entrada.getKey()== idEstado ? "selected" : "" %> value="<%= entrada.getKey() %>"><%= entrada.getValue() %></option>
@@ -77,7 +77,7 @@
 		<div class="row mb-3">
                     <label for="txt1" class="col-form-label col-sm-2">Disponibilidad</label>
 		        <div class="form-check col-sm-2 mt-2">
-                            <input class="form-check-input" type="radio" name="radDisponibilidad" id="radDisponibilidad1" value="Disponible" <%= disponibilidad.equals("Disponible") ? "checked" : "" %>>
+                            <input class="form-check-input" type="radio" name="radDisponibilidad" id="radDisponibilidad1" value="Disponible" <%= disponibilidad.equals("Disponible") ? "checked" : "" %> required>
                             <label class="form-check-label" for="radDisponibilidad1">Disponible</label>
 		        </div>
                         <div class="form-check col-sm-2 mt-2">

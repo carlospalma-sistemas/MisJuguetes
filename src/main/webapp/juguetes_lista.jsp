@@ -19,12 +19,15 @@
         <div class="container mt-5"> 
             <h3 class="mb-3">Lista de juguetes</h3>
             <hr>
+            <%
+                String filtro = (request.getParameter("txtFiltro") == null) ? "" : request.getParameter("txtFiltro");
+            %>
             <div class="row">
-                <form class="col-sm-10">
+                <form method="GET" class="col-sm-10">
                     <div class="row mb-3">
-                        <label for="txt1" class="col-form-label col-sm-2">Filtrar por nombre</label>
-                        <input type="text" class="col-form-control col-sm-9" id="txt1" name="txt1" value="">
-                        <button type="button" class="btn btn-light col-sm-1"><i class="bi bi-search"></i></button>                    
+                        <label for="txt1" class="col-form-label col-sm-2">Filtrar</label>
+                        <input type="text" class="col-form-control col-sm-9" id="txtFiltro" name="txtFiltro" value="<%= filtro %>" placeholder="por nombre, tipo, estado o disponibilidad">
+                        <button type="submit" class="btn btn-light col-sm-1"><i class="bi bi-search"></i></button>                    
                     </div>
                 </form>
                 <a href="juguetes_form.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo juguete</button></a>
@@ -43,7 +46,14 @@
                     </thead>
                     <%
                         LogicaJuguetes logicaJuguetes = new LogicaJuguetes();
-                        boolean hayDatos = logicaJuguetes.cargarTodosLosJuguetes();
+                        boolean hayDatos;
+                        if (filtro.equals("") ) {
+                            hayDatos = logicaJuguetes.cargarTodosLosJuguetes();
+                        }
+                        else {
+                            hayDatos = logicaJuguetes.cargarJuguetesPorFiltro(filtro);
+                        }
+                        
                     %>
                     <tbody>
                         <% if (hayDatos) { %>
