@@ -1,14 +1,11 @@
---CREACIÓN DE LA BASE DE DATOS
+-- CREACIÓN DE LA BASE DE DATOS
 ------------------------------
-
-CREATE DATABASE IF NOT EXISTS `dbmisjuguetes`
-
+CREATE DATABASE IF NOT EXISTS `dbmisjuguetes`;
 
 
---CREACIÓN DE LA TABLA ESTADOS_JUGUETES Y ADICIÓN DE DATOS
+-- CREACIÓN DE LA TABLA ESTADOS_JUGUETES Y ADICIÓN DE DATOS
 ----------------------------------------------------------
-
-CREATE TABLE `dbmisjuguetes`.`estados_juguetes` (
+CREATE TABLE `estados_juguetes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `estado` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
@@ -19,26 +16,22 @@ INSERT INTO estados_juguetes (estado) VALUES ('Modificado');
 INSERT INTO estados_juguetes (estado) VALUES ('Dañado');
 
 
-
---CREACIÓN DE LA TABLA TIPOS_JUGUETES Y ADICIÓN DE DATOS
+-- CREACIÓN DE LA TABLA TIPOS_JUGUETES Y ADICIÓN DE DATOS
 --------------------------------------------------------
-
 CREATE TABLE `tipos_juguetes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `tipo` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO tipos_juguetes VALUES ('Videojuego');
-INSERT INTO tipos_juguetes VALUES ('Electrónico');
-INSERT INTO tipos_juguetes VALUES ('Peluche');
-INSERT INTO tipos_juguetes VALUES ('Otro');
+INSERT INTO tipos_juguetes (tipo) VALUES ('Videojuego');
+INSERT INTO tipos_juguetes (tipo) VALUES ('Electrónico');
+INSERT INTO tipos_juguetes (tipo) VALUES ('Peluche');
+INSERT INTO tipos_juguetes (tipo) VALUES ('Otro');
 
 
-
---CREACIÓN DE LA TABLA JUGUETES Y ADICIÓN DE DATOS
+-- CREACIÓN DE LA TABLA JUGUETES Y ADICIÓN DE DATOS
 --------------------------------------------------
-
 CREATE TABLE `juguetes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
@@ -53,4 +46,5 @@ CREATE TABLE `juguetes` (
   CONSTRAINT `fk_tipos` FOREIGN KEY (`tipojuguete_id`) REFERENCES `tipos_juguetes` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO juguetes (nombre, tipojuguete_id, fechacompra, estadojuguete_id disponibilidad) VALUES ('Juguete de prueba', 1, '2018-01-01', 1, 'Disponible');
+INSERT INTO juguetes (nombre, tipojuguete_id, fechacompra, estadojuguete_id, disponibilidad) 
+VALUES ('Juguete de prueba', 1, '2018-01-01', 1, 'Disponible');

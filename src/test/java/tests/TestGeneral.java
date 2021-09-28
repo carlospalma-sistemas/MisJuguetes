@@ -18,7 +18,7 @@ import persistencia.JugueteDAO;
  */
 public class TestGeneral {
     
-    @Ignore
+    @Test
     public void verificarConexion() {
         ConexionBD con = new ConexionBD();
         Assert.assertTrue(con.isConectado(), "No hay conexión creada. ");
@@ -26,7 +26,7 @@ public class TestGeneral {
         Assert.assertFalse(con.isConectado(), "No se cerró conexión. ");
     }
     
-    @Ignore
+    @Test
     public void verificarCargaJuguetes() {
         JugueteDAO dao = new JugueteDAO();
         Assert.assertTrue(dao.consultarJuguetes().size() > 0, "No se cargaron datos de juguetes. ");
@@ -38,7 +38,7 @@ public class TestGeneral {
         Assert.assertTrue(dao.cargarTiposJuguetes().size() > 0, "No se cargaron datos de los tipos de juguetes. ");
     }
     
-    @Test
+    @Ignore
     public void verificarInsercionJuguete() {
         JugueteDAO dao = new JugueteDAO();
         Juguete j = new Juguete("Juguete de prueba", 1, "2021-01-01", 1, "Disponible");
