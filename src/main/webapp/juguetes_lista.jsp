@@ -66,7 +66,6 @@
                             <td><%= j.getDisponibilidad() %></td>
                             <td>
                                 <a href="juguetes_form.jsp?accion=editar&id=<%= j.getId() %>"><button type="button" class="btn btn-success"><i class="bi bi-pencil-fill"></i></button></a>
-                                <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                             </td>
                         </tr>
                         <% } %>
