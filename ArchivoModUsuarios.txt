@@ -1,0 +1,1 @@
+Se colocan varias funciones para el módulo de usuarios
