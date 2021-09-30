@@ -5,3 +5,5 @@ Inicio de archivo README
 4) Ahora coloco línea 4 para iniciar a trabajar
 5) Se reorganiza la nueva línea de código aquí en 5, lo hace el otro colaborador
 6) Creó otra línea aquí y terminó! Lo hizo el otro colaborador
+7) Inicio con linea 6 pero ya finalícé!!
+
