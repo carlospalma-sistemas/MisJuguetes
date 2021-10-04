@@ -1,3 +1,0 @@
-Aquí se implementa el feature 2
-con varias líneas de código
-y listo

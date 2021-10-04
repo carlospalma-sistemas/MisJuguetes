@@ -38,8 +38,7 @@
             %>
             <form method="post" action="juguetes_ctrl.jsp">
                 <div class="row mb-3">
-                    <label for="txtId" class="col-form-label col-sm-2">Id</label>
-                    <input type="text" class="col-form-control col-sm-10" id="txtId" name="txtId" value="<%= id %>" readonly>
+                    <input type="hidden" class="col-form-control col-sm-10" id="txtId" name="txtId" value="<%= id %>" readonly>
                 </div>
                 <div class="row mb-3">
                     <label for="txtNombre" class="col-form-label col-sm-2">Nombre</label>
@@ -95,7 +94,7 @@
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="<%= accion %>">Guardar</button>
-                <button type="submit" class="btn btn-secondary" id="btnSubmit" name="btnSubmit" value="cancelar">Cancelar</button>
+                <a href="juguetes_lista.jsp"><button type="button" class="btn btn-secondary" id="btnSubmit" name="btnCancelar">Cancelar</button></a>
                 </div>
             </form>
         </div>
