@@ -17,7 +17,6 @@ public class Usuario {
     private String fechanacimiento;
     private String parentesco;
     private String rol;
-
     
     public Usuario() {
     }
