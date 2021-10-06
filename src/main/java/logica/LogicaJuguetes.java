@@ -100,8 +100,7 @@ public class LogicaJuguetes {
     
     /**
      * Carga la información de un solo juguete de la base de datos
-     * @param id el id del juguete
-     * @return true si carga el juguete, o false si no se logró cargar
+     * @return true si carga los juguetes, o false si no se logró cargar
      */
     public Juguete cargarUnJuguete(int id) {
         JugueteDAO dao = new JugueteDAO();
