@@ -20,7 +20,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00004d;">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="inicio.jsp">
                     <img src="img/logo.png" alt="MisJuguetes" width="180" height="48">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

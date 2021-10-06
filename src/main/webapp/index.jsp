@@ -4,5 +4,5 @@
     Author     : Cielo Juliana
 --%>
 <%
-    request.getRequestDispatcher("juguetes_lista.jsp").forward(request, response);
+    request.getRequestDispatcher("inicio.jsp").forward(request, response);
 %>
