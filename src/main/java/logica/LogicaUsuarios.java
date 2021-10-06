@@ -12,7 +12,7 @@ import persistencia.UsuarioDAO;
  *
  * @author Cielo Juliana
  */
-public class LogicaUsuario {
+public class LogicaUsuarios {
     
     private ArrayList<Usuario> lista;
     
@@ -33,5 +33,16 @@ public class LogicaUsuario {
         else {
             return false;
         }
+    }
+    
+    /**
+     * Carga la información de un solo usuario de la base de datos
+     * @param id el id del usuario
+     * @return true si carga el usuario, o false si no se logró cargar
+     */
+    public Usuario cargarUnUsuario(int id) {
+        UsuarioDAO dao = new UsuarioDAO();
+        Usuario u = dao.consultarUsuario(id);
+        return u;
     }
 }
