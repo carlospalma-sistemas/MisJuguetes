@@ -21,7 +21,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00004d;">
             <div class="container">
-                <a class="navbar-brand" href="inicio.jsp">
+                <a class="navbar-brand" href="index.jsp">
                     <img src="img/logo.png" alt="MisJuguetes" width="180" height="48">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
                             <a class="nav-link" href="juguetes_lista.jsp"><i class="bi bi-box-seam"></i> Juguetes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="true" href="usuarios_lista.jsp"><i class="bi bi-person-lines-fill"></i> Usuarios</a>
+                            <a class="nav-link active" aria-current="true" href="usuarios"><i class="bi bi-person-lines-fill"></i> Usuarios</a>
                         </li>
                     </ul>
                 </div>
@@ -43,7 +43,7 @@
             <h3 class="mb-3">Lista de usuarios</h3>
             <hr>
             <div id="toolbar">
-                <a href="usuarios_form.jsp?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo usuario</button></a>
+                <a href="usuarios?accion=nuevo" class="col-sm-2"><button type="submit" class="btn btn-primary" id="btnNuevo">Nuevo usuario</button></a>
             </div>
             <table id="tablausuarios" class="table" data-toolbar="#toolbar" data-toggle="table" data-search="true" data-show-columns="true" data-show-export="true" data-pagination="true" data-page-list="[10, 25, 50]" data-locale="es-SP">
                 <thead>
@@ -75,7 +75,7 @@
                         <td><%= u.getParentesco()%></td>
                         <td><%= u.getRol()%></td>
                         <td>
-                            <a href="usuarios_form.jsp?accion=editar&id=<%= u.getId()%>"><button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil-fill"></i></button></a>
+                            <a href="usuarios?accion=editar&id=<%= u.getId()%>"><button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil-fill"></i></button></a>
                             <% if(!u.getRol().equals("Administrador")) { %>
                             <a href=""><button type="button" class="btn btn-danger btn-sm"><i class="bi bi-dash-circle"></i></button></a>
                             <% } %>

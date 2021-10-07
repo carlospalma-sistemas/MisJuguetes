@@ -19,6 +19,13 @@ public class Usuario {
     private String rol;
     
     public Usuario() {
+        this.id = 0;
+        this.nombrecompleto = "";
+        this.usuario = "";
+        this.passw = "";
+        this.fechanacimiento = "";
+        this.parentesco = "";
+        this.rol = "";
     }
 
     

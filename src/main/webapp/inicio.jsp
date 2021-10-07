@@ -42,7 +42,7 @@
                     <div>
                         <h2>Usuarios</h2>
                         <p>Se accede desde aquí al módulo de usuarios, donde se puede visualizar, filtrar, ingresar y modificar datos.</p>
-                        <a href="usuarios_lista.jsp" class="btn btn-primary">Ir al módulo</a>
+                        <a href="usuarios" class="btn btn-primary">Ir al módulo</a>
                     </div>
                 </div>
                 <div class="col d-flex align-items-start">

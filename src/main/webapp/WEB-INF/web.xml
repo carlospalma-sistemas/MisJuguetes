@@ -4,9 +4,17 @@
         <servlet-name>ControladorJuguetes</servlet-name>
         <servlet-class>controlador.ControladorJuguetes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorUsuarios</servlet-name>
+        <servlet-class>controlador.ControladorUsuarios</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorJuguetes</servlet-name>
         <url-pattern>/juguetes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorUsuarios</servlet-name>
+        <url-pattern>/usuarios</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
