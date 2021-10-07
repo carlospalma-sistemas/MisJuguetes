@@ -16,6 +16,7 @@ import persistencia.JugueteDAO;
  *
  * @author Cielo Juliana
  */
+@Ignore
 public class TestGeneral {
     
     @Test

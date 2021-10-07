@@ -13,7 +13,7 @@ public class ConexionBD {
     private final boolean isLocal = true;
     
     private final String conectorInstalado =    isLocal ? "jdbc:mysql:"     : "jdbc:mysql:";
-    private final String host =                 isLocal ? "localhost:3306"  : "minticloud.uis.edu.co/:3306";
+    private final String host =                 isLocal ? "localhost:3306"  : "localhost:3306";
     private final String baseDatos =            isLocal ? "dbmisjuguetes"   : "c3s2formador";
     private final String username =             isLocal ? "root"            : "c3s2formador";
     private final String password =             isLocal ? "root"            : "sbktmGO0"; 
@@ -61,6 +61,7 @@ public class ConexionBD {
      * @return un resultset con los registros obtenidos por la consulta
      */
     public ResultSet ejecutarQuery(String sql) {
+        System.out.println("sql: "+sql);
         ResultSet rs = null;
         try
         {
@@ -79,6 +80,7 @@ public class ConexionBD {
      * @return un resultset con el id del registro que se inserta
      */
     public ResultSet ejecutarInsert(String sql) {
+        System.out.println("sql: "+sql);
         ResultSet rs = null;
         try
         {
@@ -100,6 +102,7 @@ public class ConexionBD {
      * @return la cantidad de registros que se han modificado
      */
     public int ejecutarUpdate(String sql) {
+        System.out.println("sql: "+sql);
         int cant = 0;
         try
         {

@@ -31,20 +31,7 @@ public class ControladorJuguetes extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        String html = "<!DOCTYPE html>\n" +
-                        "<html>\n" +
-                        "<head>\n" +
-                        "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
-                        "<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We\" crossorigin=\"anonymous\">\n" +
-                        "</head>\n" +
-                        "<body>"+
-                        "Juguete"+
-                        "<a href=\"juguetes_lista.jsp\"><button type=\"submit\" class=\"btn btn-primary\" id=\"btnSubmit\">Volver a la lista</button></a>"+
-                        "</body>"+
-                        "</html>";
-        out.print(html);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -22,7 +22,7 @@ public class UsuarioDAO {
      * @return un arraylist con los usuarios cargados
      */
     public ArrayList<Usuario> consultarUsuarios() {
-        ArrayList<Usuario> lista = new ArrayList<Usuario>();
+        ArrayList<Usuario> lista = new ArrayList<>();
         String sql = "SELECT id, nombrecompleto, usuario, passw, fechanacimiento, parentesco, rol " +
                      "FROM usuarios " + 
                      "WHERE hab = true ";
@@ -91,7 +91,7 @@ public class UsuarioDAO {
      * @return Un arraylist con los datos de Usuario según el filtro
      */
     public ArrayList<Usuario> consultarUsuariosPorFiltro(String filtro) {
-        ArrayList<Usuario> lista = new ArrayList<Usuario>();
+        ArrayList<Usuario> lista = new ArrayList<>();
         String sql = "SELECT id, nombrecompleto, usuario, passw, fechanacimiento, parentesco, rol " +
                      "FROM usuarios " +
                      "WHERE nombrecompleto LIKE '%" + filtro + "%' " +
@@ -148,12 +148,11 @@ public class UsuarioDAO {
      * @return la cantidad de filas afectadas
      */
     public int guardarUsuarioExistente(Usuario u) {
-        int filas = 0;
         String sql = "UPDATE usuarios " +
                      "SET nombrecompleto = '" + u.getNombrecompleto() + "', usuario = '" + u.getUsuario() + "', passw = '" + u.getPassw() + "', fechanacimiento = '" + u.getFechanacimiento() + "', parentesco = '" + u.getParentesco() + "', rol = '" + u.getRol() + "' " +
                      "WHERE id = " + u.getId() + " ";
         ConexionBD con = new ConexionBD();
-        filas = con.ejecutarUpdate(sql);
+        int filas = con.ejecutarUpdate(sql);
         return filas;
     }
     
@@ -163,12 +162,11 @@ public class UsuarioDAO {
      * @return la cantidad de filas afectadas
      */
     public int eliminarUsuarioExistente(Usuario u) {
-        int filas = 0;
         String sql = "UPDATE usuarios " +
                      "SET hab = false " +
                      "WHERE id = " + u.getId() + " ";
         ConexionBD con = new ConexionBD();
-        filas = con.ejecutarUpdate(sql);
+        int filas = con.ejecutarUpdate(sql);
         return filas;
     }
 }

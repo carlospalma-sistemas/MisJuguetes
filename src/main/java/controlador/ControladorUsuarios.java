@@ -32,8 +32,10 @@ public class ControladorUsuarios extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        request.setCharacterEncoding("UTF-8");
         String pagFormulario = "usuarios_form.jsp";
         String pagLista = "usuarios_lista.jsp";
+        
         String accion = request.getParameter("accion") + "";
         int id = request.getParameter("id")==null ? 0 : Integer.parseInt(request.getParameter("id"));
         

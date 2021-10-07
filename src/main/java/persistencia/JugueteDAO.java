@@ -169,7 +169,8 @@ public class JugueteDAO {
     public TreeMap<Integer, String> cargarTiposJuguetes() {
         TreeMap<Integer, String> listaTipos = new TreeMap<Integer, String>();
         ConexionBD con = new ConexionBD();
-        ResultSet rs = con.ejecutarQuery("SELECT id, tipo FROM tipos_juguetes ");
+        String sql = "SELECT id, tipo FROM tipos_juguetes ";
+        ResultSet rs = con.ejecutarQuery(sql);
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -189,9 +190,10 @@ public class JugueteDAO {
      * @return un treemap con la lista de los estados de juguetes
      */
     public TreeMap<Integer, String> cargarEstadosJuguetes() {
-        TreeMap<Integer, String> listaEstados = new TreeMap<Integer, String>();
+        TreeMap<Integer, String> listaEstados = new TreeMap<>();
         ConexionBD con = new ConexionBD();
-        ResultSet rs = con.ejecutarQuery("SELECT id, estado FROM estados_juguetes ");
+        String sql = "SELECT id, estado FROM estados_juguetes ";
+        ResultSet rs = con.ejecutarQuery(sql);
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
