@@ -10,11 +10,14 @@ import java.sql.Statement;
  * @author Cielo Juliana
  */
 public class ConexionBD {
-    private final String conectorInstalado = "jdbc:mysql:";
-    private final String host = "localhost:3306";
-    private final String baseDatos = "dbmisjuguetes";
-    private final String username = "root";
-    private final String password = "root"; 
+    private final boolean isLocal = true;
+    
+    private final String conectorInstalado =    isLocal ? "jdbc:mysql:"     : "jdbc:mysql:";
+    private final String host =                 isLocal ? "localhost:3306"  : "minticloud.uis.edu.co/:3306";
+    private final String baseDatos =            isLocal ? "dbmisjuguetes"   : "c3s2formador";
+    private final String username =             isLocal ? "root"            : "c3s2formador";
+    private final String password =             isLocal ? "root"            : "sbktmGO0"; 
+    
     private Connection conexion;
     private Statement ejecutor;
 
