@@ -24,7 +24,8 @@ public class UsuarioDAO {
     public ArrayList<Usuario> consultarUsuarios() {
         ArrayList<Usuario> lista = new ArrayList<Usuario>();
         String sql = "SELECT id, nombrecompleto, usuario, passw, fechanacimiento, parentesco, rol " +
-                     "FROM usuarios ";
+                     "FROM usuarios " + 
+                     "WHERE hab = true ";
         ConexionBD con = new ConexionBD();
         ResultSet rs = con.ejecutarQuery(sql);
         try {
@@ -150,6 +151,21 @@ public class UsuarioDAO {
         int filas = 0;
         String sql = "UPDATE usuarios " +
                      "SET nombrecompleto = '" + u.getNombrecompleto() + "', usuario = '" + u.getUsuario() + "', passw = '" + u.getPassw() + "', fechanacimiento = '" + u.getFechanacimiento() + "', parentesco = '" + u.getParentesco() + "', rol = '" + u.getRol() + "' " +
+                     "WHERE id = " + u.getId() + " ";
+        ConexionBD con = new ConexionBD();
+        filas = con.ejecutarUpdate(sql);
+        return filas;
+    }
+    
+    /**
+     * Elimina lógicamente la información de un usuario existente
+     * @param u el objeto Usuario
+     * @return la cantidad de filas afectadas
+     */
+    public int eliminarUsuarioExistente(Usuario u) {
+        int filas = 0;
+        String sql = "UPDATE usuarios " +
+                     "SET hab = false " +
                      "WHERE id = " + u.getId() + " ";
         ConexionBD con = new ConexionBD();
         filas = con.ejecutarUpdate(sql);

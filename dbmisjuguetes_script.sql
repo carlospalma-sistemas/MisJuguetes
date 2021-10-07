@@ -60,6 +60,7 @@ CREATE TABLE `dbmisjuguetes`.`usuarios` (
   `fechanacimiento` DATE NULL,
   `parentesco` VARCHAR(30) NULL,
   `rol` VARCHAR(20) NOT NULL,
+  `hab` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`));
 
 INSERT INTO `dbmisjuguetes`.`usuarios` (nombrecompleto, usuario, passw, fechanacimiento, parentesco, rol)

@@ -60,6 +60,7 @@ CREATE TABLE `c3s2formador`.`usuarios` (
   `fechanacimiento` DATE NULL,
   `parentesco` VARCHAR(30) NULL,
   `rol` VARCHAR(20) NOT NULL,
+  `hab` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`));
 
 INSERT INTO `c3s2formador`.`usuarios` (nombrecompleto, usuario, passw, fechanacimiento, parentesco, rol)
