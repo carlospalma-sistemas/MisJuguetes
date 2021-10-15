@@ -10,7 +10,7 @@ import java.sql.Statement;
  * @author Cielo Juliana
  */
 public class ConexionBD {
-    private final boolean isLocal = false;
+    private final boolean isLocal = true;
     
     private final String conectorInstalado =    isLocal ? "jdbc:mysql:"     : "jdbc:mysql:";
     private final String host =                 isLocal ? "localhost:3306"  : "localhost:3306";

@@ -1,9 +1,0 @@
-logica\LogicaUsuarios.class
-logica\Juguete.class
-controlador\ControladorUsuarios.class
-logica\Usuario.class
-controlador\ControladorJuguetes.class
-logica\LogicaJuguetes.class
-persistencia\UsuarioDAO.class
-persistencia\ConexionBD.class
-persistencia\JugueteDAO.class
